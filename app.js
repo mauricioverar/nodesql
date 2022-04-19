@@ -10,20 +10,21 @@ app.set('views', __dirname + '/views') // vistas se guardarán acá
 // middleware
 app.use(express.static(__dirname + '/public')) // public se guardará en el hosting
 
+// RutasWeb
+app.use('/', require('./router/RutasWeb'))
+app.use('/mascotas', require('./router/Mascotas'))
+
 // Router
-app.get('/', (req, res) => {
-    // res.send('Hello World!, desde express v2')
-    res.render('index', {titulo: 'mi titulo dinamico'}) // va hacia index.ejs
+// app.get('/', (req, res) => {
+//     // res.send('Hello World!, desde express v2')
+//     res.render('index', {titulo: 'mi titulo dinamico'}) // va hacia index.ejs
+// })
 
-})
-
-// ruta pagina servicios
-app.get('/servicios', (req, res) => {
-    // res.send('pag servicios')
-    res.render('servicios', {tituloServicio: 'mi titulo dinamico de servicios'}) // va hacia index.ejs
-
-
-})
+// // ruta pagina servicios
+// app.get('/servicios', (req, res) => {
+//     // res.send('pag servicios')
+//     res.render('servicios', {tituloServicio: 'mi titulo dinamico de servicios'}) // va hacia index.ejs
+// })
 
 app.listen(port, () => {
     console.log(`servidor app listening on port ${port}`)
