@@ -11,15 +11,16 @@
                     <th scope="col">Acción</th>
                 </tr>
             </thead>
+            <!-- usar mongodb(1 cluster gratis) o mysql, etc -->
             <tbody>
 
                 <% if (arrayMascotas.length> 0) { %>
                     <% arrayMascotas.forEach(mascota=> { %>
 
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
+                            <th scope="row"><%= mascota.id %></th>
+                            <td><%= mascota.nombre %></td>
+                            <td><%= mascota.descripcion %></td>
                             <td>@mdo</td>
                         </tr>
 

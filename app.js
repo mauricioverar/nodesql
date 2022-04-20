@@ -1,7 +1,31 @@
 const express = require('express')
 const app = express()
+
+// variable de entorno para servidor(dotenv)
+require('dotenv').config()
+
 // variable de entorno para servidor(heroku)
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3000 // esto lo lee heroku
+
+// conexion db
+const mongoose = require('mongoose');
+
+const usuario = "" // usuario ficticio
+const password = ""
+const dbName = ""
+// -- OjO -- el app.js no se ve de forma publica, pero es recomendable no tener estos datos visibles, usar variables de entorno
+
+// uri = mongodb+srv://<user>:<password>@cluster0.<cluster>.mongodb.net/<basedato>?retryWrites=true&w=majority
+
+// const uri = `mongodb+srv://${usuario}:${password}@cluster0.wc2gl.mongodb.net/${dbName}?retryWrites=true&w=majority`
+// en archivo .env
+const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.wc2gl.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`
+
+main().catch(err => console.log(err));
+async function main() {
+  await mongoose.connect(uri);
+  console.log('db ok')
+}
 
 //motor de plantillas
 app.set('view engine', 'ejs')
