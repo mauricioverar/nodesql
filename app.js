@@ -18,7 +18,7 @@ const dbName = ""
 // uri = mongodb+srv://<user>:<password>@cluster0.<cluster>.mongodb.net/<basedato>?retryWrites=true&w=majority
 
 // const uri = `mongodb+srv://${usuario}:${password}@cluster0.wc2gl.mongodb.net/${dbName}?retryWrites=true&w=majority`
-// en archivo .env
+// en archivo .env (solucionar tema ip mongodb)
 const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.wc2gl.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`
 
 main().catch(err => console.log(err));
