@@ -10,9 +10,9 @@ const port = process.env.PORT || 3000 // esto lo lee heroku
 // conexion db
 const mongoose = require('mongoose');
 
-const usuario = "" // usuario ficticio
-const password = ""
-const dbName = ""
+// const usuario = "" // usuario ficticio
+// const password = ""
+// const dbName = ""
 // -- OjO -- el app.js no se ve de forma publica, pero es recomendable no tener estos datos visibles, usar variables de entorno
 
 // uri = mongodb+srv://<user>:<password>@cluster0.<cluster>.mongodb.net/<basedato>?retryWrites=true&w=majority
