@@ -1,5 +1,11 @@
 const express = require('express')
+const bodyParser = require('body-parser') // npm install body-parser
 const app = express()
+
+// parse application/x-www-form-urlencoded // app con formularios
+app.use(bodyParser.urlencoded({ extended: false }))
+// parse application/json // app con json
+app.use(bodyParser.json())
 
 // variable de entorno para servidor(dotenv)
 require('dotenv').config()
